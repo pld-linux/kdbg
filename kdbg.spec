@@ -4,7 +4,7 @@ Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.2.10
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
