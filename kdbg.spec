@@ -1,11 +1,12 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
 Name:		kdbg
-Version:	1.0.2
+Version:	1.1.0
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/KDE/Applications
+Group(pl):	X11/KDE/Aplikacje
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
-Source:		ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
+Source0:	ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
 BuildRequires:	qt-devel
 URL:		http://members.telecom.at/~johsixt/kdbg.html
 BuildRequires:	kdelibs-devel
@@ -24,9 +25,9 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It provides an
 intuitive interface for setting breakpoints, inspecting variables, and
-stepping through code. Here's a screenshot. 
+stepping through code. Here's a screenshot.
 
-Features: 
+Features:
 o Variable inspection in a tree structure.
 o Shows importent member variables of class types without the need to "open"
   the variable. For example, you don't need to go into a variable of type
@@ -56,6 +57,8 @@ rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
+gzip -9nf BUGS ChangeLog TODO
+
 %find_lang %{name}
 
 %clean
@@ -63,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
