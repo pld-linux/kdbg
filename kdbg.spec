@@ -1,9 +1,11 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
+Summary(pl):	Interfejs KDE do gdb
 Name:		kdbg
 Version:	1.1.2
-Release: 2
+Release:	2
 License:	GPL
 Group:		X11/KDE/Applications
+Group(de):	X11/KDE/Applikationen
 Group(pl):	X11/KDE/Aplikacje
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
@@ -18,7 +20,7 @@ BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_kde_icondir	%{_datadir}/pixmaps
+%define		_kde_icondir	%{_pixmapsdir}
 %define		_kde_minidir	%{_kde_icondir}/mini
 
 %description
@@ -45,11 +47,10 @@ Features:
 %setup -q
 
 %build
-LDFLAGS="-s"
-CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -Wall"
+CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
 kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
-export LDFLAGS CXXFLAGS kde_icondir kde_minidir
+export kde_icondir kde_minidir
 %configure
 
 %{__make}
