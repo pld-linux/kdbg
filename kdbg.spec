@@ -10,7 +10,7 @@ Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	XFree86-devel
 BuildRequires:	fam-devel
-BuildRequires:	kdelibs-devel >=3
+BuildRequires:	kdelibs-devel >= 3
 BuildRequires:	libpng-devel >= 1.0.8
 BuildRequires:	libstdc++-devel
 BuildRequires:	qt-devel
