@@ -2,17 +2,17 @@ Summary:	KDbg - a KDE Graphical Debugger Interface
 Summary(pl):	Interfejs KDE do gdb
 Name:		kdbg
 Version:	1.2.2
-Release:	2
+Release:	3
 License:	GPL
-Group:		X11/KDE/Applications
-Group(de):	X11/KDE/Applikationen
-Group(pl):	X11/KDE/Aplikacje
+Group:		X11/Development/Tools
+Group(de):	X11/Entwicklung/Werkzeuge
+Group(fr):	X11/Development/Outils
+Group(pl):	X11/Programowanie/Narzêdzia
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
-BuildRequires:	qt-devel
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	kdelibs-devel
-BuildRequires:	libpng >= 1.0.8
+BuildRequires:	libpng-devel >= 1.0.8
 BuildRequires:	libstdc++-devel
 BuildRequires:	qt-devel
 BuildRequires:	XFree86-devel
@@ -26,11 +26,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It
 provides an intuitive interface for setting breakpoints, inspecting
-variables, and stepping through code. Here's a screenshot.
+variables, and stepping through code.
 
 Features:
 - Variable inspection in a tree structure.
-- Shows importent member variables of class types without the need to
+- Shows important member variables of class types without the need to
   "open" the variable. For example, you don't need to go into a variable
   of type QString to view the string value - it's shown next to the
   string variable.
@@ -40,8 +40,25 @@ Features:
   (step, next, finish, until, run/continue, enable/disable/set/remove
   breakpoint) are bound to the function keys F5 through F10. It's fast
   and easy!.
-- Everthing you need to debug a program: View source code, Search
+- Everything you need to debug a program: View source code, Search
   text, set program arguments.
+
+%description -l pl
+KDbg to graficzny interfejs u¿ytkownika do gdb, debuggera GNU. Daje
+intuicyjny interfejs do ustawiania breakpointów, przegl±dania
+zmiennych, ¶ledzienia kodu.
+
+Mo¿liwo¶ci:
+- przegl±danie zmiennych w strukturze drzewiastej
+- wy¶wietlanie istotnych zmiennych z klas bez potrzeby "otwierania"
+  zmiennej. Na przyk³ad, nie potrzebujesz wchodziæ do zmiennej typu
+  QString aby zobaczyæ zawarto¶æ stringa - jest wy¶wietlana zaraz za
+  zmienn±
+- debugger pod palcami - najwa¿niejsze funkcje (krok, nastêpny,
+  koniec, do miejsca, uruchomienie/kontynuacja, w³±czenie/wy³±czenie/
+  dodanie/usuniêcie brekpointu) s± przypisane klawiszom F5 do F10.
+- Wszystko co potrzebne do odpluskwiania programu: przegl±danie kodu
+  ¼ród³owego, wyszukiwanie tekstu, ustawianie parametrów programu.
 
 %prep
 %setup -q
