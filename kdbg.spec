@@ -1,20 +1,18 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
+Summary(es):	Interfaz gráfica KDE para gdb
 Summary(pl):	Interfejs KDE do gdb
+Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
-Version:	1.2.5
-Release:	2
+Version:	1.2.6
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Development/Tools
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
+Patch0:		%{name}-desktop.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
-BuildRequires:	XFree86-devel
-BuildRequires:	fam-devel
 BuildRequires:	kdelibs-devel >= 3
-BuildRequires:	libpng-devel >= 1.0.8
-BuildRequires:	libstdc++-devel
-BuildRequires:	qt-devel
-BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -42,6 +40,9 @@ Features:
 - Everything you need to debug a program: View source code, Search
   text, set program arguments.
 
+%description -l es
+Interfaz gráfica KDE para gdb.
+
 %description -l pl
 KDbg to graficzny interfejs u¿ytkownika do gdb, debuggera GNU. Daje
 intuicyjny interfejs do ustawiania breakpointów, przegl±dania
@@ -59,8 +60,12 @@ Mo¿liwo¶ci:
 - Wszystko co potrzebne do odpluskwiania programu: przegl±danie kodu
   ¼ród³owego, wyszukiwanie tekstu, ustawianie parametrów programu.
 
+%description -l pt_BR
+Interface gráfica KDE para o gdb.
+
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
@@ -77,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN{.GB2312,}
+mv -f $RPM_BUILD_ROOT%{_pixmapsdir}{/hicolor/48x48/apps,}/kdbg.png
+
 %find_lang %{name} --with-kde
 
 %clean
@@ -88,4 +96,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
-%{_pixmapsdir}/*/*/*/*
+%{_pixmapsdir}/*
