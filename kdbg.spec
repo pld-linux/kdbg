@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 * Tue Sep 15 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2.2-3]
 - KDEDIR changed to /usr/X11R6,
-- qt is noiw placed in /usr/X11R6 also.
+- qt is now placed in /usr/X11R6 also.
 
 * Thu Sep  3 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2.2-2]
