@@ -1,8 +1,8 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
 Summary(pl):	Interfejs KDE do gdb
 Name:		kdbg
-Version:	1.2.2
-Release:	3
+Version:	1.2.5
+Release:	0.1
 License:	GPL
 Group:		X11/Development/Tools
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
