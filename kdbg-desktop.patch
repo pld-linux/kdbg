@@ -1,5 +1,5 @@
---- kdbg-1.2.6/kdbg/kdbg.desktop~	Tue Oct 22 09:24:39 2002
-+++ kdbg-1.2.6/kdbg/kdbg.desktop	Tue Oct 22 09:24:39 2002
+--- kdbg-1.2.10/kdbg/kdbg.desktop~	Tue Oct 22 09:24:39 2002
++++ kdbg-1.2.10/kdbg/kdbg.desktop	Tue Oct 22 09:24:39 2002
 @@ -5,38 +5,40 @@
  Name[da]=Afluser
  Name[es]=Depurador
@@ -19,8 +19,9 @@
 +Name[sl]=Razhroščevalnik
  Name[sv]=Avlusare
  Exec=kdbg -caption "%c" %i %m
- Icon=kdbg.png
+-Icon=kdbg
 -MiniIcon=kdbg
++Icon=kdbg.png
  Type=Application
  DocPath=kdbg/index.html
  Comment=Debug programs
