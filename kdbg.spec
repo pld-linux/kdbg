@@ -22,21 +22,24 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_kde_minidir	%{_kde_icondir}/mini
 
 %description
-KDbg is a graphical user interface to gdb, the GNU debugger. It provides an
-intuitive interface for setting breakpoints, inspecting variables, and
-stepping through code. Here's a screenshot.
+KDbg is a graphical user interface to gdb, the GNU debugger. It
+provides an intuitive interface for setting breakpoints, inspecting
+variables, and stepping through code. Here's a screenshot.
 
 Features:
-o Variable inspection in a tree structure.
-o Shows importent member variables of class types without the need to "open"
-  the variable. For example, you don't need to go into a variable of type
-  QString to view the string value - it's shown next to the string variable.
-o See for yourself. (This is, of course, configurable, not hardcoded!).
-o Debugger at your finger tips: The important debugger functions (step,
-  next, finish, until, run/continue, enable/disable/set/remove breakpoint)
-  are bound to the function keys F5 through F10. It's fast and easy!.
-o Everthing you need to debug a program: View source code, Search text, set
-  program arguments.
+- Variable inspection in a tree structure.
+- Shows importent member variables of class types without the need to
+  "open" the variable. For example, you don't need to go into a variable
+  of type QString to view the string value - it's shown next to the
+  string variable.
+- See for yourself. (This is, of course, configurable, not
+  hardcoded!).
+- Debugger at your finger tips: The important debugger functions
+  (step, next, finish, until, run/continue, enable/disable/set/remove
+  breakpoint) are bound to the function keys F5 through F10. It's fast
+  and easy!.
+- Everthing you need to debug a program: View source code, Search
+  text, set program arguments.
 
 %prep
 %setup -q
