@@ -97,4 +97,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
 %{_pixmapsdir}/*.png
-%{_pixmapsdir}/*/*/*/*.png
