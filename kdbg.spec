@@ -26,7 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It
 provides an intuitive interface for setting breakpoints, inspecting
-variables, and stepping through code. Here's a screenshot.
+variables, and stepping through code.
 
 Features:
 - Variable inspection in a tree structure.
@@ -43,6 +43,12 @@ Features:
 - Everthing you need to debug a program: View source code, Search
   text, set program arguments.
 
+%description -l pl
+KDbg jest graficznym interfejsem do gdb (GNU debugger). Dostarcza
+intuicyjny interfejs do ustawiania brakpointów, przegl±dania zmiennych
+i przegl±dania krok po kroku kodu.
+
+
 %prep
 %setup -q
 
@@ -51,7 +57,8 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
 kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
-%configure
+
+%configure2_13
 
 %{__make}
 
