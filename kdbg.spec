@@ -1,7 +1,7 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
 Summary(pl):	Interfejs KDE do gdb
 Name:		kdbg
-Version:	1.1.2
+Version:	1.2.2
 Release:	2
 License:	GPL
 Group:		X11/KDE/Applications
@@ -26,7 +26,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It
 provides an intuitive interface for setting breakpoints, inspecting
-variables, and stepping through code.
+variables, and stepping through code. Here's a screenshot.
 
 Features:
 - Variable inspection in a tree structure.
@@ -43,12 +43,6 @@ Features:
 - Everthing you need to debug a program: View source code, Search
   text, set program arguments.
 
-%description -l pl
-KDbg jest graficznym interfejsem do gdb (GNU debugger). Dostarcza
-intuicyjny interfejs do ustawiania brakpointów, przegl±dania zmiennych
-i przegl±dania krok po kroku kodu.
-
-
 %prep
 %setup -q
 
@@ -57,8 +51,7 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
 kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
-
-%configure2_13
+%configure2_13  --with-kde-version=2
 
 %{__make}
 
@@ -80,8 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
-%{_kde_icondir}/*.xpm
-%{_kde_minidir}/*.xpm
+%{_pixmapsdir}/*/*/*/*
 
 %lang(de) %{_datadir}/doc/HTML/de/*
 %lang(en) %{_datadir}/doc/HTML/en/*
