@@ -20,6 +20,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 %define		_kde_icondir	%{_pixmapsdir}
 %define		_kde_minidir	%{_kde_icondir}/mini
+%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It
@@ -66,6 +67,7 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
 kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
+kde_htmldir="%{_htmldir}"; export kde_htmldir
 %configure2_13  --with-kde-version=3
 
 %{__make}
@@ -75,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
+%find_lang %{name} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -87,7 +89,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
 %{_pixmapsdir}/*/*/*/*
-
-%{_datadir}/doc/HTML/en/*
-%lang(de) %{_datadir}/doc/HTML/de/*
-%lang(ru) %{_datadir}/doc/HTML/ru/*
