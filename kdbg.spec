@@ -4,7 +4,7 @@ Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.2.6
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Development/Tools
@@ -51,7 +51,7 @@ zmiennych, ¶ledzienia kodu.
 Mo¿liwo¶ci:
 - przegl±danie zmiennych w strukturze drzewiastej
 - wy¶wietlanie istotnych zmiennych z klas bez potrzeby "otwierania"
-  zmiennej. Na przyk³ad, nie potrzebujesz wchodziæ do zmiennej typu
+  zmiennej. Na przyk³ad, nie potrzeba wchodziæ do zmiennej typu
   QString aby zobaczyæ zawarto¶æ stringa - jest wy¶wietlana zaraz za
   zmienn±
 - debugger pod palcami - najwa¿niejsze funkcje (krok, nastêpny,
@@ -96,4 +96,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
-%{_pixmapsdir}/*
+%{_pixmapsdir}/*.png
+%{_pixmapsdir}/*/*/*/*.png
