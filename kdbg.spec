@@ -10,6 +10,7 @@ License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
+# Source0-md5: dc460350ff5f8c371f81f260b69d78ad
 Patch0:		%{name}-desktop.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	kdelibs-devel >= 3
