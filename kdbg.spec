@@ -4,7 +4,7 @@ Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.2.10
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
@@ -68,6 +68,8 @@ Interface gráfica KDE para o gdb.
 %setup -q
 %patch0 -p1
 
+echo 'Categories=KDE;Development;Debugger;' >> kdbg/kdbg.desktop
+
 %build
 %{__libtoolize}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
@@ -75,18 +77,21 @@ kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-%configure2_13 \
+%configure \
+	KDEDIR=%{_libdir} \
 	--disable-rpath \
 	--enable-final \
-	--with-kde-version=3
+	--with-kde-version=3 \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	appsdir=%{_desktopdir}
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN{.GB2312,}
 mv -f $RPM_BUILD_ROOT%{_pixmapsdir}{/hicolor/48x48/apps,}/kdbg.png
@@ -100,6 +105,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
-%{_applnkdir}/Development/*
+%{_desktopdir}/*.desktop
 %{_datadir}/apps/kdbg
 %{_pixmapsdir}/*.png
