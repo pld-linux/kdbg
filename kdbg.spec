@@ -15,10 +15,9 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	qt-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	zlib-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_applnkdir	%{_datadir}/applnk
 %define		_kde_icondir	%{_datadir}/pixmaps
 %define		_kde_minidir	%{_kde_icondir}/mini
 
