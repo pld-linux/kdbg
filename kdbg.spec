@@ -1,7 +1,7 @@
 Summary:     KDbg - a Graphical Debugger Interface
 Name:        kdbg
-Version:     0.2.2
-Release:     3
+Version:     0.2.3
+Release:     1
 Group:       X11/KDE/Applications
 Source:      ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
 Patch:       kdbg-pl.po.patch
@@ -49,28 +49,21 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644, root, root, 755)
 %attr(755, root, root) /usr/X11R6/bin/*
-/usr/X11R6/share/applnk/Applications/*
-/usr/X11R6/share/apps/kdbg
-/usr/X11R6/share/icons/kdbg.xpm
-/usr/X11R6/share/icons/mini/kdbg.xpm
+/etc/X11/kde/applnk/Applications/*
+/usr/X11R6/share/kde/apps/kdbg
+/usr/X11R6/share/kde/icons/kdbg.xpm
+/usr/X11R6/share/kde/icons/mini/kdbg.xpm
 
-%lang(de) /usr/X11R6/share/doc/HTML/de/*
-%lang(en) /usr/X11R6/share/doc/HTML/en/*
+%lang(en) /usr/X11R6/share/kde/doc/HTML/en/*
 
-%lang(cs) /usr/X11R6/share/locale/cs/LC_MESSAGES/kdbg.mo
 %lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/kdbg.mo
-%lang(es) /usr/X11R6/share/locale/es/LC_MESSAGES/kdbg.mo
 %lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/kdbg.mo
 %lang(hr) /usr/X11R6/share/locale/hr/LC_MESSAGES/kdbg.mo
-%lang(hu) /usr/X11R6/share/locale/hu/LC_MESSAGES/kdbg.mo
-%lang(it) /usr/X11R6/share/locale/it/LC_MESSAGES/kdbg.mo
-%lang(ln) /usr/X11R6/share/locale/nl/LC_MESSAGES/kdbg.mo
 %lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/kdbg.mo
 %lang(pl) /usr/X11R6/share/locale/pl/LC_MESSAGES/kdbg.mo
 %lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/kdbg.mo
 %lang(ro) /usr/X11R6/share/locale/ro/LC_MESSAGES/kdbg.mo
 %lang(sk) /usr/X11R6/share/locale/sk/LC_MESSAGES/kdbg.mo
-%lang(sv) /usr/X11R6/share/locale/sv/LC_MESSAGES/kdbg.mo
 %lang(zh) /usr/X11R6/share/locale/zh*/LC_MESSAGES/kdbg.mo
 
 %changelog
