@@ -5,9 +5,6 @@ Version:	1.2.2
 Release:	3
 License:	GPL
 Group:		X11/Development/Tools
-Group(de):	X11/Entwicklung/Werkzeuge
-Group(fr):	X11/Development/Outils
-Group(pl):	X11/Programowanie/Narzêdzia
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
 URL:		http://members.nextra.at/johsixt/kdbg.html
