@@ -3,16 +3,17 @@ Summary(es):	Interfaz gráfica KDE para gdb
 Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
-Version:	1.2.8
+Version:	1.2.9
 Release:	1
 Epoch:		1
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
-# Source0-md5:	0a41c814cd0e4efdce263aebe53b5b3f
+# Source0-md5:	caf73faf03ff6d0c03203cd71741b7e7
 Patch0:		%{name}-desktop.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
+BuildRequires:	fam-devel
 BuildRequires:	kdelibs-devel >= 3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
