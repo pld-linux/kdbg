@@ -4,7 +4,7 @@ Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.2.10
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
@@ -13,13 +13,10 @@ Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
 # Source0-md5:	e48b14f65e4c5c8473ce92767354501d
 Patch0:		%{name}-desktop.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
-BuildRequires:	fam-devel
 BuildRequires:	kdelibs-devel >= 3
+BuildRequires:	libtool
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_kde_icondir	%{_pixmapsdir}
-%define		_kde_minidir	%{_kde_icondir}/mini
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It
@@ -71,10 +68,7 @@ Interface gráfica KDE para o gdb.
 %build
 %{__libtoolize}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
-kde_icondir=%{_kde_icondir}
-kde_minidir=%{_kde_minidir}
-export kde_icondir kde_minidir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure \
 	KDEDIR=%{_libdir} \
 	--disable-rpath \
@@ -91,8 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	appsdir=%{_desktopdir}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN{.GB2312,}
-mv -f $RPM_BUILD_ROOT%{_pixmapsdir}{/hicolor/48x48/apps,}/kdbg.png
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no_NY,nn}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{zh_CN.GB2312,zh_CN}
 
 %find_lang %{name} --with-kde
 
@@ -103,6 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/*.desktop
 %{_datadir}/apps/kdbg
-%{_pixmapsdir}/*.png
+%{_desktopdir}/*.desktop
+%{_iconsdir}/hicolor/*/apps/kdbg.png
