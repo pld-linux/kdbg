@@ -14,6 +14,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	qt-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	zlib-devel
+BuildRequires:	fam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
