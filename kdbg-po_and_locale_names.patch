@@ -1,0 +1,53 @@
+diff -u kdbg-1.2.10/po.orig/Makefile.am kdbg-1.2.10/po/Makefile.am
+--- kdbg-1.2.10/po.orig/Makefile.am	Sun Jan 20 18:30:58 2002
++++ kdbg-1.2.10/po/Makefile.am	Tue Aug  3 12:53:06 2004
+@@ -1,8 +1,8 @@
+ 
+ GMOFILES = cs.gmo da.gmo de.gmo \
+ 	es.gmo fr.gmo hr.gmo hu.gmo it.gmo ja.gmo \
+-	no.gmo no_NY.gmo pl.gmo pt.gmo ro.gmo ru.gmo \
+-	sk.gmo sr.gmo sv.gmo tr.gmo zh_CN.GB2312.gmo
++	nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo \
++	sk.gmo sr@Latn.gmo sv.gmo tr.gmo zh_CN.GB2312.gmo
+ POFILES = $(GMOFILES:.gmo=.po) 
+ 
+ localedir = $(kde_locale)
+diff -u kdbg-1.2.10/po.orig/Makefile.in kdbg-1.2.10/po/Makefile.in
+--- kdbg-1.2.10/po.orig/Makefile.in	Thu May 20 21:31:19 2004
++++ kdbg-1.2.10/po/Makefile.in	Tue Aug  3 12:52:18 2004
+@@ -218,8 +218,8 @@
+ x_libraries = @x_libraries@
+ GMOFILES = cs.gmo da.gmo de.gmo \
+ 	es.gmo fr.gmo hr.gmo hu.gmo it.gmo ja.gmo \
+-	no.gmo no_NY.gmo pl.gmo pt.gmo ro.gmo ru.gmo \
+-	sk.gmo sr.gmo sv.gmo tr.gmo zh_CN.GB2312.gmo
++	nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo \
++	sk.gmo sr@Latn.gmo sv.gmo tr.gmo zh_CN.GB2312.gmo
+ 
+ POFILES = $(GMOFILES:.gmo=.po) 
+ localedir = $(kde_locale)
+diff -u kdbg-1.2.10/po.orig/pt.po kdbg-1.2.10/po/pt.po
+--- kdbg-1.2.10/po.orig/pt.po	Fri Jun  6 22:14:39 2003
++++ kdbg-1.2.10/po/pt.po	Tue Aug  3 13:01:24 2004
+@@ -8,6 +8,9 @@
+ "POT-Creation-Date: 2003-06-06 22:14+0200\n"
+ "PO-Revision-Date: 1998-05-26 12:00+0000\n"
+ "Last-Translator: Pedro Morais <morais@kde.org>\n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=iso-8859-1\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #: pgmargs.cpp:37
+ msgid ": Program arguments"
+diff -u kdbg-1.2.10/po.orig/sr.po kdbg-1.2.10/po/sr.po
+--- kdbg-1.2.10/po.orig/sr.po	Fri Jun  6 22:14:39 2003
++++ kdbg-1.2.10/po/sr.po	Tue Aug  3 12:56:42 2004
+@@ -12,7 +12,7 @@
+ "Language-Team: Serbian <LL@kde.org.yu>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=iso-8859-2\n"
+-"Content-Transfer-Encoding: ENCODING\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #: pgmargs.cpp:37
+ msgid ": Program arguments"
