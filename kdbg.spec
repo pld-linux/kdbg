@@ -5,13 +5,14 @@ Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.2.10
 Release:	5
-Epoch:		1
+Epoch:		2
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
 # Source0-md5:	e48b14f65e4c5c8473ce92767354501d
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-po_and_locale_names.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	kdelibs-devel >= 3
 BuildRequires:	libtool
@@ -64,6 +65,13 @@ Interface gráfica KDE para o gdb.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{no,nb}.po
+mv -f po/{no_NY,nn}.po
+mv -f po/sr{,@Latn}.po
+# this one is bogus (no real translation inside)
+# mv -f po/zh_CN{.GB2312,}.po
 
 %build
 %{__libtoolize}
@@ -85,9 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	appsdir=%{_desktopdir}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no_NY,nn}
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{zh_CN.GB2312,zh_CN}
+# this is bogus (no real translation inside)
+rm -fr $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN.GB2312
 
 %find_lang %{name} --with-kde
 
