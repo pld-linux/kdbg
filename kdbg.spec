@@ -45,7 +45,7 @@ Interfaz gráfica KDE para gdb.
 %description -l pl
 KDbg to graficzny interfejs u¿ytkownika do gdb, debuggera GNU. Daje
 intuicyjny interfejs do ustawiania breakpointów, przegl±dania
-zmiennych, ¶ledzienia kodu.
+zmiennych, ¶ledzenia kodu.
 
 Mo¿liwo¶ci:
 - przegl±danie zmiennych w strukturze drzewiastej
@@ -55,7 +55,7 @@ Mo¿liwo¶ci:
   zmienn±
 - debugger pod palcami - najwa¿niejsze funkcje (krok, nastêpny,
   koniec, do miejsca, uruchomienie/kontynuacja, w³±czenie/wy³±czenie/
-  dodanie/usuniêcie brekpointu) s± przypisane klawiszom F5 do F10.
+  dodanie/usuniêcie breakpointa) s± przypisane klawiszom F5 do F10.
 - Wszystko co potrzebne do odpluskwiania programu: przegl±danie kodu
   ¼ród³owego, wyszukiwanie tekstu, ustawianie parametrów programu.
 
