@@ -6,9 +6,10 @@
  Name[fi]=Debuggeri
 -Name[fr]=Débogueur
 -Name[is]=Aflúsun
+-Name[no]=Avluser
 +Name[fr]=DÃ©bogueur
 +Name[is]=AflÃºsun
- Name[no]=Avluser
++Name[nb]=Avluser
  Name[pt]=Depurador
  Name[pt_BR]=Depurador
  Name[ro]=Depanator
@@ -37,9 +38,10 @@
  Comment[fi]=Tutki ohjelmien toimintaa
 -Comment[fr]=Déboguer un programme
 -Comment[is]=kdbg:  Forrit til að aflúsa önnur forrit
+-Comment[no]=Avluse programmer
 +Comment[fr]=DÃ©boguer un programme
 +Comment[is]=kdbg:  Forrit til aÃ° aflÃºsa Ã¶nnur forrit
- Comment[no]=Avluse programmer
++Comment[nb]=Avluse programmer
  Comment[pl]=Program do debugowania
  Comment[pt]=Depurador de programas
  Comment[pt_BR]=Depurador de programas
