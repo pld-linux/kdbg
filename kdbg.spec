@@ -44,6 +44,8 @@ rm -rf $RPM_BUILD_ROOT
 
 make install
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -56,16 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/share/kde/icons/mini/kdbg.xpm
 
 %lang(en) /usr/X11R6/share/kde/doc/HTML/en/*
-
-%lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/kdbg.mo
-%lang(fr) /usr/X11R6/share/locale/fr/LC_MESSAGES/kdbg.mo
-%lang(hr) /usr/X11R6/share/locale/hr/LC_MESSAGES/kdbg.mo
-%lang(no) /usr/X11R6/share/locale/no/LC_MESSAGES/kdbg.mo
-%lang(pl) /usr/X11R6/share/locale/pl/LC_MESSAGES/kdbg.mo
-%lang(pt) /usr/X11R6/share/locale/pt/LC_MESSAGES/kdbg.mo
-%lang(ro) /usr/X11R6/share/locale/ro/LC_MESSAGES/kdbg.mo
-%lang(sk) /usr/X11R6/share/locale/sk/LC_MESSAGES/kdbg.mo
-%lang(zh) /usr/X11R6/share/locale/zh*/LC_MESSAGES/kdbg.mo
 
 %changelog
 * Tue Sep 15 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
