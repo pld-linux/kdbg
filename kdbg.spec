@@ -52,7 +52,7 @@ kde_minidir=%{_kde_minidir}
 export LDFLAGS CXXFLAGS kde_icondir kde_minidir
 %configure
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
