@@ -75,8 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf BUGS ChangeLog TODO
-
 %find_lang %{name}
 
 %clean
