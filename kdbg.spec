@@ -2,8 +2,9 @@ Summary:     KDbg - a Graphical Debugger Interface
 Name:        kdbg
 Version:     0.2.2
 Release:     1
-Source:      ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
 Group:       X11/KDE/Applications
+Source:      ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
+Patch:       kdbg-pl.po.patch
 Copyright:   GPL
 Requires:    qt >= 1.40
 Vendor:      Johannes Sixt <Johannes.Sixt@telecom.at>
@@ -28,6 +29,7 @@ o Everthing you need to debug a program: View source code, Search text, set
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 export KDEDIR=/usr
@@ -71,6 +73,11 @@ rm -rf $RPM_BUILD_ROOT
 %lang(zh) /usr/share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
 
 %changelog
+* Thu Sep  3 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.2.2-2]
+- added patch with polish translation
+  (Adam Kozubowicz <tapir@interdata.com.pl>).
+
 * Mon Aug 31 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.2.2-1]
 - first release in rpm package.
