@@ -1,14 +1,14 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
 Name:		kdbg
-Version:	1.1.0
+Version:	1.1.2
 Release:	1
 License:	GPL
 Group:		X11/KDE/Applications
 Group(pl):	X11/KDE/Aplikacje
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
-Source0:	ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
 BuildRequires:	qt-devel
-URL:		http://members.telecom.at/~johsixt/kdbg.html
+URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	kdelibs-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
