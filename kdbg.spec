@@ -4,7 +4,7 @@ Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.2.6
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		X11/Development/Tools
@@ -73,7 +73,10 @@ kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-%configure2_13  --with-kde-version=3
+%configure2_13 \
+	--disable-rpath \
+	--enable-final \
+	--with-kde-version=3
 
 %{__make}
 
