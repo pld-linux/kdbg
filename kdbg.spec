@@ -58,18 +58,3 @@ rm -rf $RPM_BUILD_ROOT
 /usr/X11R6/share/kde/icons/mini/kdbg.xpm
 
 %lang(en) /usr/X11R6/share/kde/doc/HTML/en/*
-
-%changelog
-* Tue Sep 15 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.2.2-3]
-- KDEDIR changed to /usr/X11R6,
-- qt is now placed in /usr/X11R6 also.
-
-* Thu Sep  3 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.2.2-2]
-- added patch with polish translation
-  (Adam Kozubowicz <tapir@interdata.com.pl>).
-
-* Mon Aug 31 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.2.2-1]
-- first release in rpm package.
