@@ -8,7 +8,7 @@ Patch:       kdbg-pl.po.patch
 Copyright:   GPL
 Requires:    qt >= 1.40
 Vendor:      Johannes Sixt <Johannes.Sixt@telecom.at>
-BuildRoot:   /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It provides an
