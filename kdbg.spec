@@ -1,6 +1,6 @@
 Summary:	KDbg - a Graphical Debugger Interface
 Name:		kdbg
-Version:	0.2.3
+Version:	0.3.0
 Release:	1
 Group:		X11/KDE/Applications
 Source:		ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
