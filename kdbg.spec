@@ -72,6 +72,7 @@ kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_appsdir="%{_applnkdir}"; export kde_appsdir 
 %configure2_13 \
 	--disable-rpath \
 	--enable-final \
