@@ -34,7 +34,7 @@ o Everthing you need to debug a program: View source code, Search text, set
 %build
 export KDEDIR=/usr/X11R6
 CFLAGS="$RPM_OPT_FLAGS -Wall" CXXFLAGS="$RPM_OPT_FLAGS -Wall" \
-./configure %{_target} \
+./configure %{_target_platform} \
 	--prefix=$KDEDIR \
 	--with-install-root=$RPM_BUILD_ROOT
 make
