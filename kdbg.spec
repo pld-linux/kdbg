@@ -1,16 +1,24 @@
 Summary:	KDbg - a Graphical Debugger Interface
 Name:		kdbg
 Version:	1.0.1
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		X11/KDE/Applications
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Source:		ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
 BuildRequires:	qt-devel
 URL:		http://members.telecom.at/~johsixt/kdbg.html
+BuildRequires:	kdelibs-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libstdc++-devel
+BuildRequires:	qt-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	zlib-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
+%define		_applnkdir	%{_datadir}/applnk
+
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It provides an
 intuitive interface for setting breakpoints, inspecting variables, and
@@ -34,7 +42,7 @@ o Everthing you need to debug a program: View source code, Search text, set
 %build
 KDEDIR=%{_prefix}
 LDFLAGS="-s"
-CXXFLAGS="$RPM_OPT_FLAGS -Wall"
+CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -Wall"
 export KDEDIR LDFLAGS CXXFLAGS
 %configure
 
@@ -43,7 +51,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make install
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %find_lang %{name}
 
@@ -52,10 +60,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/X11R6/bin/*
-/etc/X11/kde/applnk/Applications/*
-%{_datadir}/kde/apps/kdbg
-%{_datadir}/kde/icons/kdbg.xpm
-%{_datadir}/kde/icons/mini/kdbg.xpm
+%attr(755,root,root) %{_bindir}/*
+%{_applnkdir}/Development/*
+%{_datadir}/apps/kdbg
+%{_datadir}/icons/*.xpm
+%{_datadir}/icons/mini/*.xpm
 
-%{_datadir}/kde/doc/HTML/en/*
+%lang(de) %{_datadir}/doc/HTML/de/*
+%lang(en) %{_datadir}/doc/HTML/en/*
+%lang(ru) %{_datadir}/doc/HTML/ru/*
