@@ -1,7 +1,7 @@
-Summary:	KDbg - a Graphical Debugger Interface
+Summary:	KDbg - a KDE Graphical Debugger Interface
 Name:		kdbg
-Version:	1.0.1
-Release:	2
+Version:	1.0.2
+Release:	1
 Copyright:	GPL
 Group:		X11/KDE/Applications
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
@@ -18,6 +18,8 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
 %define		_applnkdir	%{_datadir}/applnk
+%define		_kde_icondir	%{_datadir}/pixmaps
+%define		_kde_minidir	%{_kde_icondir}/mini
 
 %description
 KDbg is a graphical user interface to gdb, the GNU debugger. It provides an
@@ -40,10 +42,11 @@ o Everthing you need to debug a program: View source code, Search text, set
 %setup -q
 
 %build
-KDEDIR=%{_prefix}
 LDFLAGS="-s"
 CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti -fno-exceptions -Wall"
-export KDEDIR LDFLAGS CXXFLAGS
+kde_icondir=%{_kde_icondir}
+kde_minidir=%{_kde_minidir}
+export LDFLAGS CXXFLAGS kde_icondir kde_minidir
 %configure
 
 make
@@ -63,8 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
-%{_datadir}/icons/*.xpm
-%{_datadir}/icons/mini/*.xpm
+%{_kde_icondir}/*.xpm
+%{_kde_minidir}/*.xpm
 
 %lang(de) %{_datadir}/doc/HTML/de/*
 %lang(en) %{_datadir}/doc/HTML/en/*
