@@ -69,6 +69,7 @@ Interface gráfica KDE para o gdb.
 %patch0 -p1
 
 %build
+%{__libtoolize}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
 kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
