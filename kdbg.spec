@@ -48,8 +48,8 @@ make install
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
-%attr(755, root, root) /usr/X11R6/bin/*
+%defattr(644,root,root,755)
+%attr(755,root,root) /usr/X11R6/bin/*
 /etc/X11/kde/applnk/Applications/*
 /usr/X11R6/share/kde/apps/kdbg
 /usr/X11R6/share/kde/icons/kdbg.xpm
