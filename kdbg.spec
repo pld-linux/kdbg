@@ -1,13 +1,13 @@
-Summary:     KDbg - a Graphical Debugger Interface
-Name:        kdbg
-Version:     0.2.3
-Release:     1
-Group:       X11/KDE/Applications
-Source:      ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
-Patch:       kdbg-pl.po.patch
-Copyright:   GPL
-Requires:    qt >= 1.40
-Vendor:      Johannes Sixt <Johannes.Sixt@telecom.at>
+Summary:	KDbg - a Graphical Debugger Interface
+Name:		kdbg
+Version:	0.2.3
+Release:	1
+Group:		X11/KDE/Applications
+Source:		ftp://cronus.eudaptics.co.at/pub/people/jsixt/%{name}-%{version}.tar.gz
+Patch:		kdbg-pl.po.patch
+Copyright:	GPL
+Requires:	qt >= 1.40
+Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
