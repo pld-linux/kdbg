@@ -8,13 +8,13 @@ Group:		X11/Development/Tools
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
 URL:		http://members.nextra.at/johsixt/kdbg.html
-BuildRequires:	kdelibs-devel
+BuildRequires:	XFree86-devel
+BuildRequires:	fam-devel
+BuildRequires:	kdelibs-devel >=3
 BuildRequires:	libpng-devel >= 1.0.8
 BuildRequires:	libstdc++-devel
 BuildRequires:	qt-devel
-BuildRequires:	XFree86-devel
 BuildRequires:	zlib-devel
-BuildRequires:	fam-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -66,7 +66,7 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
 kde_icondir=%{_kde_icondir}
 kde_minidir=%{_kde_minidir}
 export kde_icondir kde_minidir
-%configure2_13  --with-kde-version=2
+%configure2_13  --with-kde-version=3
 
 %{__make}
 
@@ -84,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc BUGS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
 %{_applnkdir}/Development/*
 %{_datadir}/apps/kdbg
