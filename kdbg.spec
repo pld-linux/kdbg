@@ -7,9 +7,9 @@ Version:	1.2.6
 Release:	3
 Epoch:		1
 License:	GPL
-Group:		X11/Development/Tools
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/kdbg/%{name}-%{version}.tar.gz
+Group:		X11/Development/Tools
+Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	kdelibs-devel >= 3
