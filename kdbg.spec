@@ -4,7 +4,7 @@ Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	1.9.7
-Release:	6
+Release:	1
 Epoch:		2
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
@@ -16,7 +16,7 @@ Patch1:		%{name}-po_and_locale_names.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	kdelibs-devel >= 3
 BuildRequires:	libtool
-BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -72,13 +72,15 @@ mv -f po/sr{,@Latn}.po
 # mv -f po/zh_CN{.GB2312,}.po
 
 %build
-%{__libtoolize}
-CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions -Wall"
+export CXXFLAGS="%{rpmcxxflags} -fno-rtti -fno-exceptions -Wall"
+cp -f /usr/share/automake/config.sub admin
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
+kde_libs_htmldir="%{_kdedocdir}"; export kde_libs_htmldir
+
+%{__make} -f admin/Makefile.common cvs
 %configure \
 	KDEDIR=%{_libdir} \
 	--disable-rpath \
-	--enable-final \
 	--with-kde-version=3 \
 	--with-qt-libraries=%{_libdir}
 
