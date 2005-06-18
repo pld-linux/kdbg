@@ -14,6 +14,8 @@ Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-po_and_locale_names.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.167
