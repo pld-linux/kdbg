@@ -3,16 +3,15 @@ Summary(es):	Interfaz gráfica KDE para gdb
 Summary(pl):	Interfejs KDE do gdb
 Summary(pt_BR):	Interface gráfica KDE para o gdb
 Name:		kdbg
-Version:	1.9.7
+Version:	2.0.0
 Release:	1
 Epoch:		2
 License:	GPL
 Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
-# Source0-md5:	815128017c245bdf8ebedcf1c0fc24e1
-Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-po_and_locale_names.patch
+# Source0-md5:	68c3bcd6d7b42c3790fde66036b150ce
+Patch0:		%{name}-po_and_locale_names.patch
 URL:		http://members.nextra.at/johsixt/kdbg.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -67,19 +66,18 @@ Interface gráfica KDE para o gdb.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 mv -f po/sr{,@Latn}.po
 # this one is bogus (no real translation inside)
 # mv -f po/zh_CN{.GB2312,}.po
 
 %build
-export CXXFLAGS="%{rpmcxxflags} -fno-rtti -fno-exceptions -Wall"
 cp -f /usr/share/automake/config.sub admin
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_libs_htmldir="%{_kdedocdir}"; export kde_libs_htmldir
 
 %{__make} -f admin/Makefile.common cvs
+
 %configure \
 	KDEDIR=%{_libdir} \
 	--disable-rpath \
@@ -108,5 +106,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc BUGS ChangeLog TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kdbg
-%{_desktopdir}/*.desktop
+%{_desktopdir}/kde/*.desktop
 %{_iconsdir}/hicolor/*/apps/kdbg.png
