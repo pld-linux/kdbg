@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 	appsdir=%{_desktopdir}
 
 # this is bogus (no real translation inside)
-rm -fr $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN.GB2312
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN.GB2312
 
 %find_lang %{name} --with-kde
 
