@@ -1,0 +1,2 @@
+- using desktop patch we don need all pixmaps (only this in main %{_pixmapsdir}
+  are neccessary).
