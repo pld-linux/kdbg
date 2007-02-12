@@ -1,7 +1,7 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
-Summary(es):	Interfaz gráfica KDE para gdb
-Summary(pl):	Interfejs KDE do gdb
-Summary(pt_BR):	Interface gráfica KDE para o gdb
+Summary(es.UTF-8):   Interfaz grÃ¡fica KDE para gdb
+Summary(pl.UTF-8):   Interfejs KDE do gdb
+Summary(pt_BR.UTF-8):   Interface grÃ¡fica KDE para o gdb
 Name:		kdbg
 Version:	2.0.4
 Release:	1
@@ -40,28 +40,28 @@ Features:
 - Everything you need to debug a program: View source code, Search
   text, set program arguments.
 
-%description -l es
-Interfaz gráfica KDE para gdb.
+%description -l es.UTF-8
+Interfaz grÃ¡fica KDE para gdb.
 
-%description -l pl
-KDbg to graficzny interfejs u¿ytkownika do gdb, debuggera GNU. Daje
-intuicyjny interfejs do ustawiania breakpointów, przegl±dania
-zmiennych, ¶ledzenia kodu.
+%description -l pl.UTF-8
+KDbg to graficzny interfejs uÅ¼ytkownika do gdb, debuggera GNU. Daje
+intuicyjny interfejs do ustawiania breakpointÃ³w, przeglÄ…dania
+zmiennych, Å›ledzenia kodu.
 
-Mo¿liwo¶ci:
-- przegl±danie zmiennych w strukturze drzewiastej
-- wy¶wietlanie istotnych zmiennych z klas bez potrzeby "otwierania"
-  zmiennej. Na przyk³ad, nie potrzeba wchodziæ do zmiennej typu
-  QString aby zobaczyæ zawarto¶æ stringa - jest wy¶wietlana zaraz za
-  zmienn±
-- debugger pod palcami - najwa¿niejsze funkcje (krok, nastêpny,
-  koniec, do miejsca, uruchomienie/kontynuacja, w³±czenie/wy³±czenie/
-  dodanie/usuniêcie breakpointa) s± przypisane klawiszom F5 do F10.
-- Wszystko co potrzebne do odpluskwiania programu: przegl±danie kodu
-  ¼ród³owego, wyszukiwanie tekstu, ustawianie parametrów programu.
+MoÅ¼liwoÅ›ci:
+- przeglÄ…danie zmiennych w strukturze drzewiastej
+- wyÅ›wietlanie istotnych zmiennych z klas bez potrzeby "otwierania"
+  zmiennej. Na przykÅ‚ad, nie potrzeba wchodziÄ‡ do zmiennej typu
+  QString aby zobaczyÄ‡ zawartoÅ›Ä‡ stringa - jest wyÅ›wietlana zaraz za
+  zmiennÄ…
+- debugger pod palcami - najwaÅ¼niejsze funkcje (krok, nastÄ™pny,
+  koniec, do miejsca, uruchomienie/kontynuacja, wÅ‚Ä…czenie/wyÅ‚Ä…czenie/
+  dodanie/usuniÄ™cie breakpointa) sÄ… przypisane klawiszom F5 do F10.
+- Wszystko co potrzebne do odpluskwiania programu: przeglÄ…danie kodu
+  ÅºrÃ³dÅ‚owego, wyszukiwanie tekstu, ustawianie parametrÃ³w programu.
 
-%description -l pt_BR
-Interface gráfica KDE para o gdb.
+%description -l pt_BR.UTF-8
+Interface grÃ¡fica KDE para o gdb.
 
 %prep
 %setup -q
