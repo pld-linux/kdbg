@@ -1,7 +1,7 @@
 Summary:	KDbg - a KDE Graphical Debugger Interface
-Summary(es.UTF-8):   Interfaz gráfica KDE para gdb
-Summary(pl.UTF-8):   Interfejs KDE do gdb
-Summary(pt_BR.UTF-8):   Interface gráfica KDE para o gdb
+Summary(es.UTF-8):	Interfaz gráfica KDE para gdb
+Summary(pl.UTF-8):	Interfejs KDE do gdb
+Summary(pt_BR.UTF-8):	Interface gráfica KDE para o gdb
 Name:		kdbg
 Version:	2.0.4
 Release:	1
