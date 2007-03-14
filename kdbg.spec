@@ -7,12 +7,13 @@ Version:	2.0.4
 Release:	1
 Epoch:		2
 License:	GPL
-Vendor:		Johannes Sixt <Johannes.Sixt@telecom.at>
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
 # Source0-md5:	7e2d0a144a3bd6225f6769dcf29d8b17
 Patch0:		%{name}-po_and_locale_names.patch
-URL:		http://members.nextra.at/johsixt/kdbg.html
+Patch1:		kdbg-am.patch
+Patch2:		kde-ac260.patch
+URL:		http://www.kdbg.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 3
@@ -66,6 +67,8 @@ Interface gráfica KDE para o gdb.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 mv -f po/sr{,@Latn}.po
 # this one is bogus (no real translation inside)
