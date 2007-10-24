@@ -70,9 +70,7 @@ Interface gráfica KDE para o gdb.
 %patch1 -p1
 %patch2 -p1
 
-mv -f po/sr{,@Latn}.po
-# this one is bogus (no real translation inside)
-# mv -f po/zh_CN{.GB2312,}.po
+mv -f po/sr{,@latin}.po
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -95,9 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	appsdir=%{_desktopdir}
-
-# this is bogus (no real translation inside)
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/zh_CN.GB2312
 
 %find_lang %{name} --with-kde
 
