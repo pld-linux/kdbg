@@ -3,13 +3,13 @@ Summary(es.UTF-8):	Interfaz gráfica KDE para gdb
 Summary(pl.UTF-8):	Interfejs KDE do gdb
 Summary(pt_BR.UTF-8):	Interface gráfica KDE para o gdb
 Name:		kdbg
-Version:	2.0.4
+Version:	2.0.5
 Release:	1
 Epoch:		2
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
-# Source0-md5:	7e2d0a144a3bd6225f6769dcf29d8b17
+# Source0-md5:	1c0a90c82f27c0ddcdf0a4434d85119b
 Patch0:		%{name}-po_and_locale_names.patch
 Patch1:		kdbg-am.patch
 Patch2:		kde-ac260.patch
@@ -68,7 +68,7 @@ Interface gráfica KDE para o gdb.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+#%patch2 -p1
 
 mv -f po/sr{,@latin}.po
 
@@ -94,6 +94,8 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	appsdir=%{_desktopdir}
 
+rm -f $RPM_BUILD_ROOT%{_iconsdir}/locolor/*/apps/*.png
+
 %find_lang %{name} --with-kde
 
 %clean
@@ -106,3 +108,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kdbg
 %{_desktopdir}/kde/*.desktop
 %{_iconsdir}/hicolor/*/apps/kdbg.png
+%{_datadir}/config/*
