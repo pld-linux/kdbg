@@ -4,10 +4,10 @@
  xdg_menudir = @xdg_menudir@
  #>- POFILES = AUTO
  #>+ 2
--POFILES = da.po de.po cs.po es.po fr.po hr.po hu.po ja.po it.po nb.po nn.po pl.po pt.po ro.po ru.po sk.po sr.po sv.po tr.po
--GMOFILES = da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr.gmo sv.gmo tr.gmo
-+POFILES = da.po de.po cs.po es.po fr.po hr.po hu.po ja.po it.po nb.po nn.po pl.po pt.po ro.po ru.po sk.po sr@Latin.po sv.po tr.po
-+GMOFILES = da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr@Latin.gmo sv.gmo tr.gmo
+-POFILES = zh_CN.po da.po de.po cs.po es.po fr.po hr.po hu.po ja.po it.po nb.po nn.po pl.po pt.po ro.po ru.po sk.po sr.po sv.po tr.po
+-GMOFILES = zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr.gmo sv.gmo tr.gmo
++POFILES = zh_CN.po da.po de.po cs.po es.po fr.po hr.po hu.po ja.po it.po nb.po nn.po pl.po pt.po ro.po ru.po sk.po sr@Latn.po sv.po tr.po
++GMOFILES = zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr@Latn.gmo sv.gmo tr.gmo
  #>- all: all-am
  #>+ 1
  all: all-nls docs-am  all-am
@@ -28,8 +28,8 @@
  
  #>+ 3
  clean-nls:
--	-rm -f  da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr.gmo sv.gmo tr.gmo
-+	-rm -f  da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr@Latin.gmo sv.gmo tr.gmo
+-	-rm -f  zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr.gmo sv.gmo tr.gmo
++	-rm -f  zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr@Latn.gmo sv.gmo tr.gmo
  
  #>+ 10
  install-nls:
