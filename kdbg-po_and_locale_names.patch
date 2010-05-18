@@ -1,35 +1,44 @@
---- kdbg-2.0.0/po/Makefile.in.orig	2005-07-14 21:27:12.000000000 +0200
-+++ kdbg-2.0.0/po/Makefile.in	2005-07-31 12:31:24.151705760 +0200
-@@ -283,8 +283,8 @@
+--- kdbg-2.0.0/po/Makefile.in.orig	2010-03-27 22:00:44.000000000 +0100
++++ kdbg-2.0.0/po/Makefile.in	2010-05-18 11:31:45.000000000 +0200
+@@ -297,8 +297,8 @@
  xdg_menudir = @xdg_menudir@
  #>- POFILES = AUTO
  #>+ 2
--POFILES = zh_CN.po da.po de.po cs.po es.po fr.po hr.po hu.po ja.po it.po nb.po nn.po pl.po pt.po ro.po ru.po sk.po sr.po sv.po tr.po
--GMOFILES = zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr.gmo sv.gmo tr.gmo
-+POFILES = zh_CN.po da.po de.po cs.po es.po fr.po hr.po hu.po ja.po it.po nb.po nn.po pl.po pt.po ro.po ru.po sk.po sr@Latn.po sv.po tr.po
-+GMOFILES = zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr@Latn.gmo sv.gmo tr.gmo
+-POFILES = pt.po it.po hu.po da.po ru.po es.po sv.po nb.po fr.po zh_CN.po cs.po nn.po sk.po ro.po sr.po de.po pl.po ja.po hr.po tr.po
+-GMOFILES = pt.gmo it.gmo hu.gmo da.gmo ru.gmo es.gmo sv.gmo nb.gmo fr.gmo zh_CN.gmo cs.gmo nn.gmo sk.gmo ro.gmo sr.gmo de.gmo pl.gmo ja.gmo hr.gmo tr.gmo
++POFILES = pt.po it.po hu.po da.po ru.po es.po sv.po nb.po fr.po zh_CN.po cs.po nn.po sk.po ro.po sr@Latn.po de.po pl.po ja.po hr.po tr.po
++GMOFILES = pt.gmo it.gmo hu.gmo da.gmo ru.gmo es.gmo sv.gmo nb.gmo fr.gmo zh_CN.gmo cs.gmo nn.gmo sk.gmo ro.gmo sr@Latn.gmo de.gmo pl.gmo ja.gmo hr.gmo tr.gmo
  #>- all: all-am
  #>+ 1
  all: all-nls docs-am  all-am
-@@ -529,9 +529,9 @@
- sk.gmo: sk.po
- 	rm -f sk.gmo; $(GMSGFMT) -o sk.gmo $(srcdir)/sk.po
- 	test ! -f sk.gmo || touch sk.gmo
+@@ -502,7 +502,7 @@
+ 
+ 
+ #>+ 2
+-KDE_DIST=tr.gmo zh_CN.po sv.gmo sr.gmo nn.po da.po ru.gmo nb.gmo de.po ja.gmo fr.po nb.po cs.po tr.po zh_CN.gmo sk.gmo ro.po ja.po it.gmo de.gmo es.po pt.gmo es.gmo it.po da.gmo sr.po pl.gmo pt.po hr.po ru.po fr.gmo ro.gmo cs.gmo nn.gmo Makefile.in hr.gmo sv.po hu.po pl.po sk.po hu.gmo Makefile.am 
++KDE_DIST=tr.gmo zh_CN.po sv.gmo sr@Latn.gmo nn.po da.po ru.gmo nb.gmo de.po ja.gmo fr.po nb.po cs.po tr.po zh_CN.gmo sk.gmo ro.po ja.po it.gmo de.gmo es.po pt.gmo es.gmo it.po da.gmo sr@Latn.po pl.gmo pt.po hr.po ru.po fr.gmo ro.gmo cs.gmo nn.gmo Makefile.in hr.gmo sv.po hu.po pl.po sk.po hu.gmo Makefile.am 
+ 
+ #>+ 61
+ pt.gmo: pt.po
+@@ -547,9 +547,9 @@
+ ro.gmo: ro.po
+ 	rm -f ro.gmo; $(GMSGFMT) -o ro.gmo $(srcdir)/ro.po
+ 	test ! -f ro.gmo || touch ro.gmo
 -sr.gmo: sr.po
 -	rm -f sr.gmo; $(GMSGFMT) -o sr.gmo $(srcdir)/sr.po
 -	test ! -f sr.gmo || touch sr.gmo
 +sr@Latn.gmo: sr@Latn.po
 +	rm -f sr@Latn.gmo; $(GMSGFMT) -o sr@Latn.gmo $(srcdir)/sr@Latn.po
 +	test ! -f sr@Latn.gmo || touch sr@Latn.gmo
- sv.gmo: sv.po
- 	rm -f sv.gmo; $(GMSGFMT) -o sv.gmo $(srcdir)/sv.po
- 	test ! -f sv.gmo || touch sv.gmo
-@@ -541,7 +541,7 @@
+ de.gmo: de.po
+ 	rm -f de.gmo; $(GMSGFMT) -o de.gmo $(srcdir)/de.po
+ 	test ! -f de.gmo || touch de.gmo
+@@ -568,7 +568,7 @@
  
  #>+ 3
  clean-nls:
--	-rm -f  zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr.gmo sv.gmo tr.gmo
-+	-rm -f  zh_CN.gmo da.gmo de.gmo cs.gmo es.gmo fr.gmo hr.gmo hu.gmo ja.gmo it.gmo nb.gmo nn.gmo pl.gmo pt.gmo ro.gmo ru.gmo sk.gmo sr@Latn.gmo sv.gmo tr.gmo
+-	-rm -f  pt.gmo it.gmo hu.gmo da.gmo ru.gmo es.gmo sv.gmo nb.gmo fr.gmo zh_CN.gmo cs.gmo nn.gmo sk.gmo ro.gmo sr.gmo de.gmo pl.gmo ja.gmo hr.gmo tr.gmo
++	-rm -f  pt.gmo it.gmo hu.gmo da.gmo ru.gmo es.gmo sv.gmo nb.gmo fr.gmo zh_CN.gmo cs.gmo nn.gmo sk.gmo ro.gmo sr@Latn.gmo de.gmo pl.gmo ja.gmo hr.gmo tr.gmo
  
  #>+ 10
  install-nls:

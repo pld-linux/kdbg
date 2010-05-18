@@ -3,18 +3,18 @@ Summary(es.UTF-8):	Interfaz gráfica KDE para gdb
 Summary(pl.UTF-8):	Interfejs KDE do gdb
 Summary(pt_BR.UTF-8):	Interface gráfica KDE para o gdb
 Name:		kdbg
-Version:	2.1.1
+Version:	2.2.1
 Release:	1
 Epoch:		2
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
-# Source0-md5:	2b7998528a68d09ff871925335092a1e
+# Source0-md5:	668d90c61c330a020af6d96a12184510
 Patch0:		%{name}-po_and_locale_names.patch
 URL:		http://www.kdbg.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	kdelibs-devel >= 3
+BuildRequires:	kde4-kde3support-devel
 BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
