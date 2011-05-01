@@ -1,22 +1,26 @@
+
+%define         kde4ver 4.6.0
+%define         qtver   4.7.1
+%define         orgname	kdbg
+
 Summary:	KDbg - a KDE Graphical Debugger Interface
 Summary(es.UTF-8):	Interfaz gráfica KDE para gdb
 Summary(pl.UTF-8):	Interfejs KDE do gdb
 Summary(pt_BR.UTF-8):	Interface gráfica KDE para o gdb
 Name:		kdbg
-Version:	2.2.1
+Version:	2.5.0
 Release:	1
 Epoch:		2
 License:	GPL
 Group:		X11/Development/Tools
-Source0:	http://dl.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
-# Source0-md5:	668d90c61c330a020af6d96a12184510
-Patch0:		%{name}-po_and_locale_names.patch
+Source0:	http://downloads.sourceforge.net/kdbg/%{name}-%{version}.tar.gz
+# Source0-md5:	687f2892a5751d1e7d8708e37ec1a367
 URL:		http://www.kdbg.org/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	kde4-kde3support-devel
-BuildRequires:	libtool
-BuildRequires:	rpmbuild(macros) >= 1.167
+BuildRequires:	cmake >= 2.8.0
+BuildRequires:	kde4-kdelibs-devel >= %{kde4ver}
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -50,9 +54,8 @@ zmiennych, śledzenia kodu.
 Możliwości:
 - przeglądanie zmiennych w strukturze drzewiastej
 - wyświetlanie istotnych zmiennych z klas bez potrzeby "otwierania"
-  zmiennej. Na przykład, nie potrzeba wchodzić do zmiennej typu
-  QString aby zobaczyć zawartość stringa - jest wyświetlana zaraz za
-  zmienną
+  zmiennej. Na przykład, nie potrzeba wchodzić do zmiennej typu QString
+  aby zobaczyć zawartość stringa - jest wyświetlana zaraz za zmienną
 - debugger pod palcami - najważniejsze funkcje (krok, następny,
   koniec, do miejsca, uruchomienie/kontynuacja, włączenie/wyłączenie/
   dodanie/usunięcie breakpointa) są przypisane klawiszom F5 do F10.
@@ -64,33 +67,23 @@ Interface gráfica KDE para o gdb.
 
 %prep
 %setup -q
-%patch0 -p1
 
 mv -f po/sr{,@latin}.po
 
 %build
-cp -f /usr/share/automake/config.sub admin
-kde_htmldir="%{_kdedocdir}"; export kde_htmldir
-kde_libs_htmldir="%{_kdedocdir}"; export kde_libs_htmldir
-
-%{__make} -f admin/Makefile.common cvs
-
-%configure \
-	KDEDIR=%{_libdir} \
-	--disable-rpath \
-	--with-kde-version=3 \
-	--with-qt-libraries=%{_libdir}
+install -d build
+cd build
+%cmake \
+		../
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	appsdir=%{_desktopdir}
-
-rm -f $RPM_BUILD_ROOT%{_iconsdir}/locolor/*/apps/*.png
+%{__make} -C build install \
+        DESTDIR=$RPM_BUILD_ROOT \
+        kde_htmldir=%{_kdedocdir}
 
 %find_lang %{name} --with-kde
 
@@ -99,9 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc BUGS ChangeLog TODO
+%doc BUGS TODO
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kdbg
-%{_desktopdir}/kde/*.desktop
-%{_iconsdir}/hicolor/*/apps/kdbg.png
+%{_desktopdir}/kde4/*.desktop
 %{_datadir}/config/*
